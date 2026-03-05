@@ -1,0 +1,18 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall
+
+TARGET = simulation
+
+SRC = main.c++ \
+      TLB.c++ \
+      VirtualMemorySystem.c++ \
+      PhysicalMemory.c++ \
+      FIFOReplacement.c++ \
+      LRUReplacement.c++ \
+      ClockReplacement.c++
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
+
+clean:
+	del simulation.exe
